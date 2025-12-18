@@ -1,0 +1,30 @@
+name: "mesh_governance"
+version: "2.1.0"
+config-version: 2
+
+profile: "snowflake"
+require-dbt-version: ">=1.6.0"
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["jaffle-data"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  # need to find project evaluator soure in each project
+  project_evaluator_source_location_prod: ['jaffle_shop_platform','jaffle_shop_marketing','jaffle_shop_finance']
+  project_evaluator_source_location_staging: ['jaffle_shop_platform','jaffle_shop_marketing','jaffle_shop_finance']
+
+models:
+  mesh_governance:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: view
