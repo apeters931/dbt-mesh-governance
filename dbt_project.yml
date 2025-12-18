@@ -20,7 +20,7 @@ clean-targets:
 vars:
   # need to find project evaluator soure in each project
   project_evaluator_source_location_prod: ['jaffle_shop_platform','jaffle_shop_marketing','jaffle_shop_finance']
-  project_evaluator_source_location_staging: ['jaffle_shop_platform','jaffle_shop_marketing','jaffle_shop_finance']
+  # project_evaluator_source_location_staging: ['jaffle_shop_platform','jaffle_shop_marketing','jaffle_shop_finance']
 
 models:
   mesh_governance:
